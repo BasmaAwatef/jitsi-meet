@@ -363,6 +363,9 @@ export function parseURIString(uri: ?string) {
     }
     obj.room = room;
 
+    // The part of the pathname from the beginning to the room name is the tenant.
+    obj.tenant = contextRootEndIndex > 1 ? pathname.substring(1, contextRootEndIndex) : '';
+
     return obj;
 }
 
